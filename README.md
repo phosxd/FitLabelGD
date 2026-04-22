@@ -2,7 +2,7 @@
 
 <img src="git_assets/banner.png" align=""></img>
 
-A couple of custom Control nodes for efficently positioning & sizing clipped labels. Built for Godot 4.5 / 4.6.
+A couple of custom Control nodes for efficiently positioning & sizing clipped labels. Built for Godot 4.5 / 4.6.
 
 [![Release](https://img.shields.io/badge/-gray?style=flat&logo=discord)](https://dsc.gg/sohp) **Version:** 1.0.0
 
