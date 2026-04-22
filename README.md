@@ -19,6 +19,7 @@ There are two ways to use the `FitLabel` node.
 ## How to use the FLMHBoxContainer node
 The FLMHBC (FitLabel Manager Horizontal Box Container) node (I know, it's a mouthful) is just like like a regular HBoxContainer, except it can be used to automatically update `FitLabel` children based on it's parameters.
 <img src="git_assets/flmhbc_inspector.png" align=""></img>
+
 You can either have it update based on specific signals, or have it update at a set interval, whatever works best for your scenario is what you should go with.
 
 # Example Scene
