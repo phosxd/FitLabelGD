@@ -4,8 +4,8 @@
 # Only include the addons folder when downloading from the Asset Library.
 /** export-ignore
 /src !export-ignore
-/src/FitLabel Nodes !export-ignore
-/src/FitLabel Nodes/** !export-ignore
+"/src/FitLabel Nodes" !export-ignore
+"/src/FitLabel Nodes/**" !export-ignore
 
 # Don't include UID files.
 *.uid export-ignore
