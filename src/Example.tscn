@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://vi3ohlyep5ps"]
+
+[ext_resource type="Script" uid="uid://jcyhjfw0fjll" path="res://FitLabel Nodes/FitLabel.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://bs20bt18512p1" path="res://FitLabel Nodes/FLMHBoxContainer.gd" id="1_62e2m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qtu10"]
+font_size = 22
+outline_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.43529412, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy58a"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 0, 1)
+
+[node name="Example" type="VBoxContainer" unique_id=1882734196]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label 1" type="Label" parent="." unique_id=571246263]
+layout_mode = 2
+text = "Normal Labels (w/ clipping)"
+label_settings = SubResource("LabelSettings_qtu10")
+
+[node name="Scene 1 Desc" type="Label" parent="." unique_id=1693239112]
+layout_mode = 2
+text = "While clipping, there is no way to efficiently use space. There will always be these gaps with dynamic text. This is a waste of space & looks ugly, yet Godot offers no real or adaptable solution to this."
+autowrap_mode = 2
+
+[node name="Scene 1" type="PanelContainer" parent="." unique_id=453681596]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
+
+[node name="HBox" type="HBoxContainer" parent="Scene 1" unique_id=666153775]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Items" type="HBoxContainer" parent="Scene 1/HBox" unique_id=397724048]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Scene 1/HBox/Items" unique_id=327737036]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Loooooooooooooong"
+text_overrun_behavior = 5
+
+[node name="Label2" type="Label" parent="Scene 1/HBox/Items" unique_id=285973091]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item 2"
+text_overrun_behavior = 5
+
+[node name="Label3" type="Label" parent="Scene 1/HBox/Items" unique_id=33393280]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item 3"
+text_overrun_behavior = 5
+
+[node name="Label4" type="Label" parent="Scene 1/HBox/Items" unique_id=161172584]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Another Item Loooooooooooooong"
+text_overrun_behavior = 5
+
+[node name="Immovable Object" type="ColorRect" parent="Scene 1/HBox" unique_id=881338729]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Scene 1/HBox/Immovable Object" unique_id=1267618649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Immoveable Object"
+
+[node name="Label 2" type="Label" parent="." unique_id=75158052]
+layout_mode = 2
+text = "Fit Label"
+label_settings = SubResource("LabelSettings_qtu10")
+
+[node name="Scene 2 Desc" type="Label" parent="." unique_id=1186184188]
+layout_mode = 2
+text = "Items here only use the space they absolutely *need*, it can also adapt to text, font, scaling, & sibling changes in real time.
+Go ahead & mess around with it in-editor!"
+autowrap_mode = 2
+
+[node name="Scene 2" type="PanelContainer" parent="." unique_id=1166289952]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iy58a")
+
+[node name="HBox" type="HBoxContainer" parent="Scene 2" unique_id=2061260698]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Items" type="HBoxContainer" parent="Scene 2/HBox" unique_id=1400805515]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+script = ExtResource("1_62e2m")
+update_rate = 5.0
+metadata/_custom_type_script = "uid://bs20bt18512p1"
+
+[node name="FitLabel" type="Label" parent="Scene 2/HBox/Items" unique_id=140597741]
+custom_minimum_size = Vector2(205.32813, 0)
+layout_mode = 2
+text = "Item Loooooooooooooong"
+text_overrun_behavior = 5
+script = ExtResource("1_0fbet")
+metadata/_custom_type_script = "uid://jcyhjfw0fjll"
+
+[node name="FitLabel2" type="Label" parent="Scene 2/HBox/Items" unique_id=639698492]
+custom_minimum_size = Vector2(50.015625, 0)
+layout_mode = 2
+text = "Item 2"
+text_overrun_behavior = 5
+script = ExtResource("1_0fbet")
+metadata/_custom_type_script = "uid://jcyhjfw0fjll"
+
+[node name="FitLabel3" type="Label" parent="Scene 2/HBox/Items" unique_id=430455246]
+custom_minimum_size = Vector2(50.015625, 0)
+layout_mode = 2
+text = "Item 3"
+text_overrun_behavior = 5
+script = ExtResource("1_0fbet")
+metadata/_custom_type_script = "uid://jcyhjfw0fjll"
+
+[node name="FitLabel4" type="Label" parent="Scene 2/HBox/Items" unique_id=2108773736]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+text = "Another Item Loooooooooooooong"
+text_overrun_behavior = 5
+script = ExtResource("1_0fbet")
+metadata/_custom_type_script = "uid://jcyhjfw0fjll"
+
+[node name="Immovable Object" type="ColorRect" parent="Scene 2/HBox" unique_id=987759007]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Scene 2/HBox/Immovable Object" unique_id=992202021]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Immoveable Object"
